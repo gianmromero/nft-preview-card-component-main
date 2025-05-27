@@ -28,14 +28,13 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: https://github.com/gianmromero/nft-preview-card-component-main
-- Live Site URL: https://nft-preview-card-component-main-tawny-two.vercel.app/
+  - Solution URL: [https://github.com/gianmromero/nft-preview-card-component-main](https://your-solution-url.com)
+  - Live Site URL: [https://nft-preview-card-component-main-tawny-two.vercel.app/](https://your-live-site-url.com)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
 - Flexbox
 - CSS Grid
 - CSS methods
