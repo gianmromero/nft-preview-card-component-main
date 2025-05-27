@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --blue-500: hsl(215, 51%, 70%);
+    --cyan-400: hsl(178, 100%, 50%);
+    --blue-950: hsl(217, 54%, 11%);
+    --blue-900: hsl(216, 50%, 16%);
+    --blue-800: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', 'sans-serif';
+    font-size: 1.125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--blue-950);
+}
+
+.nft {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: 
+    'image'
+    'title'
+    'description'
+    'info'
+    'credits';
+    align-items: center;
+    justify-content: center;
+    width: clamp(327px, 90%, 350px);
+    background-color: var(--blue-900);
+    border-radius: 0.938em;
+}
+
+.nft__image {
+    position: relative;
+    margin: 1.5em 1.563em 0 1.5em;
+    overflow: hidden;
+}
+
+.nft__image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5em;
+}
+
+.nft__title {
+    margin: 0.75em 1.563em 0 1.5em;
+    font-size: 1.375rem;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.nft__description {
+    font-weight: 200;
+    font-size: 1.125rem;
+    color: var(--blue-500);
+    margin: 0.75em 1.5em 0 1.5em;
+}
+
+.nft__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.nft__price {
+    margin-left: 1.5em;
+    font-size: clamp(0.938rem, 1.5vw, 1rem);
+    font-weight: 400;
+    color: var(--cyan-400);    
+}
+.nft__days {
+    margin-right: 0.875em;
+    font-size: clamp(0.938rem, 1.5vw, 1rem);
+    font-weight: 200;
+    color: var(--blue-500);
+}
+
+.nft__line {
+    width: 278px;
+    height: 1px;
+    background-color: #979797;
+    opacity: 0.2;
+    justify-self: center;
+    border: none;
+}
+
+.nft__credits {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    font-size: clamp(0.938rem, 1.5w, 1rem);
+    margin-top: 1.125em;
+    margin-bottom: 1.563em;
+}
+.nft__profile {
+    width: 33px;
+    height: 33px;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    margin-left: 1.5em;
+    margin-right: 1em;
+}
+.nft__text {
+    color: var(--blue-500);
+    margin-right: 0.313em;
+}
+.nft__name {
+    color: var(--white);
+}
+
+.nft__footer {
+    display: flex;
+    align-items: center;
+}
+
+.nft__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nft__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: hsla(178, 100%, 50%, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 0.5em;
+    margin-bottom: 0.3125em;
+}
+
+/* Active states */
+.nft__image:active .nft__overlay {
+    opacity: 1;
+}
+.nft__image:active .nft__icon {
+    opacity: 1;
+}
+
+.nft__title_active:active {
+    color: var(--cyan-400);
+}
+.nft__title_active:hover {
+    cursor: pointer;
+
+}
+
+.nft__name_active:active {
+    color: var(--cyan-400);
+}
+.nft__name_active:hover {
+    cursor: pointer;
+}
